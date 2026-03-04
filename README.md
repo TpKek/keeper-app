@@ -1,16 +1,79 @@
-# React + Vite
+# Keeper App 📝
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React-based note-taking application built with Vite.
 
-Currently, two official plugins are available:
+> ⚠️ **Status: Work in Progress**
+> This project is currently under development. Features and functionality may change.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Getting Started
 
-## React Compiler
+### Prerequisites
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Node.js (v14 or higher)
+- npm or yarn
 
-## Expanding the ESLint configuration
+### Installation
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+```
+
+## 🛠️ Tech Stack
+
+- **Frontend:** React 18+
+- **Build Tool:** Vite
+- **Styling:** CSS
+- **Linting:** ESLint
+
+## 📁 Project Structure
+
+```
+keeper-app/
+├── src/
+│   ├── App.jsx          # Main application component
+│   ├── Footer.jsx       # Footer component
+│   ├── Header.jsx       # Header component
+│   ├── Notes.jsx        # Notes display component
+│   ├── index.css        # Global styles
+│   └── main.jsx         # Application entry point
+├── index.html           # HTML entry point
+├── package.json         # Project dependencies
+├── vite.config.js       # Vite configuration
+└── eslint.config.js     # ESLint configuration
+```
+
+## 🔄 Current Features
+
+- ✅ Header and Footer layout components
+- ✅ Notes display with title and content
+- ✅ Basic styling with responsive design
+- ⚠️ Delete note functionality (in development)
+- ⚠️ Add new note functionality (planned)
+- ⚠️ Data persistence (planned)
+
+## 📋 Roadmap
+
+- [ ] Implement add note functionality
+- [ ] Implement delete note functionality
+- [ ] Add local storage or backend for data persistence
+- [ ] Improve styling and UI/UX
+- [ ] Add input form for creating new notes
+- [ ] Implement edit note functionality (future)
+
+## 📄 License
+
+MIT License
+
+## 👤 Author
+
+TpKek
