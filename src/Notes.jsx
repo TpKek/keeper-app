@@ -1,49 +1,61 @@
 import React from 'react';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import Typography from '@mui/material/Typography';
+import IconButton from '@mui/material/IconButton';
+import DeleteIcon from '@mui/icons-material/Delete';
 
-// const Notes = () => {
-//   return (
-//     <div className="notes">
-//       <h1>This is the note title</h1>
-//       <p>This is the note content</p>
-//     </div>
-//   );
-// };
-
-const notesData = [
-  {
-    key: 1,
-    title: 'Loops',
-    content:
-      'How to keep a programmer in the shower forever. Show him the shampoo bottle instructions: Lather. Rinse. Repeat.',
-  },
-  {
-    key: 2,
-    title: 'Delegation',
-    content:
-      'Q. How many programmers does it take to change a light bulb? A. None – It’s a hardware problem',
-  },
-  {
-    key: 3,
-    title: 'Arrays',
-    content:
-      'Q. Why did the programmer quit his job? A. Because he didn’t get arrays.',
-  },
-  {
-    key: 4,
-    title: 'Hardware vs. Software',
-    content:
-      "What's the difference between hardware and software? You can hit your hardware with a hammer, but you can only curse at your software.",
-  },
-];
-
-function Notes() {
+function Notes({ notes, onDeleteNote }) {
   return (
     <div>
-      {notesData.map(note => (
-        <div key={note.key} className="notes">
-          <h1>{note.title}</h1>
-          <p>{note.content}</p>
-        </div>
+      {notes.map(note => (
+        <Card
+          key={note.key}
+          className="notes"
+          sx={{
+            backgroundColor: '#fff9c4',
+            boxShadow: 3,
+            position: 'relative',
+            transform: 'rotate(-1deg)',
+            '&:hover': {
+              transform: 'rotate(0deg) scale(1.02)',
+              boxShadow: 6,
+            },
+          }}
+        >
+          <CardContent>
+            <Typography
+              variant="h6"
+              component="div"
+              sx={{
+                fontFamily: 'Caveat, cursive',
+                fontWeight: 600,
+                fontSize: '1.3rem',
+              }}
+            >
+              {note.title}
+            </Typography>
+            <Typography
+              variant="body1"
+              sx={{ fontFamily: 'Caveat, cursive', fontSize: '1.1rem', mt: 1 }}
+            >
+              {note.content}
+            </Typography>
+            <IconButton
+              aria-label="delete"
+              onClick={() => onDeleteNote(note.key)}
+              sx={{
+                position: 'absolute',
+                top: 8,
+                right: 8,
+                color: 'gray',
+                '&:hover': { color: '#e74c3c' },
+              }}
+            >
+              <DeleteIcon />
+            </IconButton>
+          </CardContent>
+        </Card>
       ))}
     </div>
   );
